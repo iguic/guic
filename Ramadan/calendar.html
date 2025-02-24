@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রমজান ক্যালেন্ডার ১৪৪৫</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            font-family: 'Kalpurush', Arial, sans-serif;
+            background-color: #f8f4e3;
+            color: #2d3142;
+        }
+        .calendar-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm 10mm;
+            background: linear-gradient(to bottom, #f8f4e3, #e8f0ff);
+        }
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23005e7c' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #14532d;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #14532d;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #e8f0ff;
+        }
+        tr:nth-child(odd) {
+            background-color: #f8f4e3;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            background-color: #14532d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Scheherazade', serif;
+            color: #14532d;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+        .footer-note {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #14532d;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .moon-star {
+            display: inline-block;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body class="islamic-pattern">
+
+    <!-- Add this right after the opening <body> tag -->
+<nav class="bg-green-900 text-white shadow-md">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo and Brand Name -->
+            <div class="flex items-center">
+                <span class="font-bold text-xl">GUIC</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-center space-x-4">
+                    <!-- Home -->
+                    <a href="../index.html" class="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-green-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Home
+                    </a>
+                    
+                    <!-- Facebook Page -->
+                    <a href="https://www.facebook.com/islamicguic" class="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-green-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                        Facebook Page
+                    </a>
+                    
+                    <!-- Group -->
+                    <a href="https://www.facebook.com/groups/islamicguic" class="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-green-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Group
+                    </a>
+                    
+                    <!-- Posts -->
+                    <a href="../blog.html" class="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-green-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                        Posts
+                    </a>
+                    
+                    <!-- About -->
+                    <a href="../about.html" class="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-green-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        About
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-green-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#" class="flex items-center px-3 py-2 rounded-md text-base font-medium hover:bg-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Home
+            </a>
+            
+            <a href="#" class="flex items-center px-3 py-2 rounded-md text-base font-medium hover:bg-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                </svg>
+                Facebook Page
+            </a>
+            
+            <a href="#" class="flex items-center px-3 py-2 rounded-md text-base font-medium hover:bg-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Group
+            </a>
+            
+            <a href="#" class="flex items-center px-3 py-2 rounded-md text-base font-medium hover:bg-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+                Posts
+            </a>
+            
+            <a href="#" class="flex items-center px-3 py-2 rounded-md text-base font-medium hover:bg-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                About
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="calendar-container shadow-xl rounded-lg">
+        <!-- Header Section -->
+<div class="header text-center">
+    
+
+    <div class="logo mt-1">
+        <span class="text-xl rounded inline-block p-2">
+            <img src="logo.png" alt="GUIC Logo" class="h-19 w-19">
+        </span>
+    </div>
+
+
+    <h1 class="text-2xl font-bold text-green-900 mt-2">ইসলামিক ফাউন্ডেশন</h1>
+    <h2 class="text-xl text-green-800 mt-2">সাহরী ও ইফতারের সময়সূচী</h2>
+    <h3 class="text-lg text-green-700 mt-1">(ঢাকা জেলার জন্য প্রযোজ্য)</h3>
+    <div class="text-md text-green-700 mt-1">পরিচিত মাসের রমজান ১৪৪৫ হিজরি, ২০২৫ ঈসায়ী</div>
+
+    <div class="arabic-text mt-4">
+        <p class="text-2xl font-bold">رَمَضَان كَرِيم</p>
+        <div class="text-sm text-green-800">Ramadan Kareem</div>
+    </div>
+</div>
+
+        
+        <!-- Calendar Section -->
+        <div class="overflow-x-auto mt-4">
+            <table class="w-full border-2 border-green-900">
+                <thead>
+                    <tr class="bg-green-900 text-white">
+                        <th>১৪৪৫ হিজরি রমজান</th>
+                        <th>২০২৫ ইংরেজি তারিখ</th>
+                        <th>বার</th>
+                        <th>সাহরীর শেষ সময়</th>
+                        <th>ফজরের ওয়াক্ত শুরু</th>
+                        <th>ইফতারের সময়</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>০১</td>
+                        <td>০২ মার্চ</td>
+                        <td>রবিবার</td>
+                        <td>৫:০৪ মি:</td>
+                        <td>৫:০৫ মি:</td>
+                        <td>৬:০৩ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০২</td>
+                        <td>০৩ মার্চ</td>
+                        <td>সোমবার</td>
+                        <td>৫:০৩ মি:</td>
+                        <td>৫:০৪ মি:</td>
+                        <td>৬:০৩ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০৩</td>
+                        <td>০৪ মার্চ</td>
+                        <td>মঙ্গলবার</td>
+                        <td>৫:০২ মি:</td>
+                        <td>৫:০৩ মি:</td>
+                        <td>৬:০৪ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০৪</td>
+                        <td>০৫ মার্চ</td>
+                        <td>বুধবার</td>
+                        <td>৫:০১ মি:</td>
+                        <td>৫:০২ মি:</td>
+                        <td>৬:০৪ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০৫</td>
+                        <td>০৬ মার্চ</td>
+                        <td>বৃহস্পতিবার</td>
+                        <td>৫:০০ মি:</td>
+                        <td>৫:০১ মি:</td>
+                        <td>৬:০৫ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০৬</td>
+                        <td>০৭ মার্চ</td>
+                        <td>শুক্রবার</td>
+                        <td>৪:৫৯ মি:</td>
+                        <td>৫:০০ মি:</td>
+                        <td>৬:০৫ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০৭</td>
+                        <td>০৮ মার্চ</td>
+                        <td>শনিবার</td>
+                        <td>৪:৫৮ মি:</td>
+                        <td>৪:৫৯ মি:</td>
+                        <td>৬:০৬ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০৮</td>
+                        <td>০৯ মার্চ</td>
+                        <td>রবিবার</td>
+                        <td>৪:৫৭ মি:</td>
+                        <td>৪:৫৮ মি:</td>
+                        <td>৬:০৬ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>০৯</td>
+                        <td>১০ মার্চ</td>
+                        <td>সোমবার</td>
+                        <td>৪:৫৬ মি:</td>
+                        <td>৪:৫৭ মি:</td>
+                        <td>৬:০৭ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১০</td>
+                        <td>১১ মার্চ</td>
+                        <td>মঙ্গলবার</td>
+                        <td>৪:৫৫ মি:</td>
+                        <td>৪:৫৬ মি:</td>
+                        <td>৬:০৭ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১১</td>
+                        <td>১২ মার্চ</td>
+                        <td>বুধবার</td>
+                        <td>৪:৫৪ মি:</td>
+                        <td>৪:৫৫ মি:</td>
+                        <td>৬:০৮ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১২</td>
+                        <td>১৩ মার্চ</td>
+                        <td>বৃহস্পতিবার</td>
+                        <td>৪:৫৩ মি:</td>
+                        <td>৪:৫৪ মি:</td>
+                        <td>৬:০৮ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১৩</td>
+                        <td>১৪ মার্চ</td>
+                        <td>শুক্রবার</td>
+                        <td>৪:৫২ মি:</td>
+                        <td>৪:৫৩ মি:</td>
+                        <td>৬:০৯ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১৪</td>
+                        <td>১৫ মার্চ</td>
+                        <td>শনিবার</td>
+                        <td>৪:৫১ মি:</td>
+                        <td>৪:৫২ মি:</td>
+                        <td>৬:০৯ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১৫</td>
+                        <td>১৬ মার্চ</td>
+                        <td>রবিবার</td>
+                        <td>৪:৫০ মি:</td>
+                        <td>৪:৫১ মি:</td>
+                        <td>৬:১০ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১৬</td>
+                        <td>১৭ মার্চ</td>
+                        <td>সোমবার</td>
+                        <td>৪:৪৯ মি:</td>
+                        <td>৪:৫০ মি:</td>
+                        <td>৬:১০ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১৭</td>
+                        <td>১৮ মার্চ</td>
+                        <td>মঙ্গলবার</td>
+                        <td>৪:৪৮ মি:</td>
+                        <td>৪:৪৯ মি:</td>
+                        <td>৬:১১ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১৮</td>
+                        <td>১৯ মার্চ</td>
+                        <td>বুধবার</td>
+                        <td>৪:৪৭ মি:</td>
+                        <td>৪:৪৮ মি:</td>
+                        <td>৬:১১ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>১৯</td>
+                        <td>২০ মার্চ</td>
+                        <td>বৃহস্পতিবার</td>
+                        <td>৪:৪৬ মি:</td>
+                        <td>৪:৪৭ মি:</td>
+                        <td>৬:১২ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>২০</td>
+                        <td>২১ মার্চ</td>
+                        <td>শুক্রবার</td>
+                        <td>৪:৪৫ মি:</td>
+                        <td>৪:৪৬ মি:</td>
+                        <td>৬:১২ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>২১</td>
+                        <td>২২ মার্চ</td>
+                        <td>শনিবার</td>
+                        <td>৪:৪৪ মি:</td>
+                        <td>৪:৪৫ মি:</td>
+                        <td>৬:১৩ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>২২</td>
+                        <td>২৩ মার্চ</td>
+                        <td>রবিবার</td>
+                        <td>৪:৪৩ মি:</td>
+                        <td>৪:৪৪ মি:</td>
+                        <td>৬:১৩ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>২৩</td>
+                        <td>২৪ মার্চ</td>
+                        <td>সোমবার</td>
+                        <td>৪:৪২ মি:</td>
+                        <td>৪:৪৩ মি:</td>
+                        <td>৬:১৪ মি:</td>
+                    </tr>
+                    <tr class="bg-green-50">
+                        <td>২৪</td>
+                        <td>২৫ মার্চ</td>
+                        <td>মঙ্গলবার</td>
+                        <td>৪:৪১ মি:</td>
+                        <td>৪:৪২ মি:</td>
+                        <td>৬:১৪ মি:</td>
+                    </tr>
+                    <tr class="bg-green-50">
+                        <td>২৫</td>
+                        <td>২৬ মার্চ</td>
+                        <td>বুধবার</td>
+                        <td>৪:৪০ মি:</td>
+                        <td>৪:৪১ মি:</td>
+                        <td>৬:১৫ মি:</td>
+                    </tr>
+                    <tr class="bg-yellow-50">
+                        <td class="font-bold">২৬</td>
+                        <td>২৭ মার্চ</td>
+                        <td>বৃহস্পতিবার</td>
+                        <td>৪:৩৯ মি:</td>
+                        <td>৪:৪০ মি:</td>
+                        <td>৬:১৫ মি:</td>
+                    </tr>
+                    <tr class="bg-yellow-50">
+                        <td class="font-bold">২৭</td>
+                        <td>২৮ মার্চ</td>
+                        <td>শুক্রবার</td>
+                        <td>৪:৩৮ মি:</td>
+                        <td>৪:৩৯ মি:</td>
+                        <td>৬:১৬ মি:</td>
+                    </tr>
+                    <tr class="bg-green-50">
+                        <td>২৮</td>
+                        <td>২৯ মার্চ</td>
+                        <td>শনিবার</td>
+                        <td>৪:৩৭ মি:</td>
+                        <td>৪:৩৮ মি:</td>
+                        <td>৬:১৬ মি:</td>
+                    </tr>
+                    <tr class="bg-yellow-50">
+                        <td class="font-bold">২৯</td>
+                        <td>৩০ মার্চ</td>
+                        <td>রবিবার</td>
+                        <td>৪:৩৬ মি:</td>
+                        <td>৪:৩৭ মি:</td>
+                        <td>৬:১৭ মি:</td>
+                    </tr>
+                    <tr>
+                        <td>৩০</td>
+                        <td>৩১ মার্চ</td>
+                        <td>সোমবার</td>
+                        <td>৪:৩৫ মি:</td>
+                        <td>৪:৩৬ মি:</td>
+                        <td>৬:১৭ মি:</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Important Notes -->
+        <div class="mt-6">
+            <div class="bg-yellow-50 p-4 rounded-lg border-2 border-green-800 text-center">
+                <p class="font-bold text-green-900">⚠️ লাইলাতুল কদর: ২৬, ২৭, ২৯ রমজান।</p>
+                <p class="font-bold text-green-900 mt-2">⚠️ পবিত্র রমজান চাঁদ দেখার উপর নির্ভরশীল।</p>
+            </div>
+            
+            <div class="mt-4 p-4 bg-green-50 rounded-lg border border-green-800 text-sm text-green-900">
+                <p>উল্লেখ্য, চাঁদ দেখার উপর নির্ভর করে সাহরী ও ইফতারের সময়সূচী ইসলামিক ফাউন্ডেশনের বিজ্ঞপ্তি ও জেলা প্রশাসকের ঘোষণা অনুযায়ী পরিবর্তিত হতে পারে।</p>
+            </div>
+        </div>
+        
+        <!-- Footer Decoration -->
+<div class="mt-6 flex justify-center">
+    <svg width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M75 0L78.5317 9.27051H88.2635L80.366 15.0098L83.8977 24.2803L75 18.5393L66.1023 24.2803L69.634 15.0098L61.7365 9.27051H71.4683L75 0Z" fill="#14532d"/>
+        <path d="M30 5L32.2451 11.7639H39.5106L33.6327 15.9721L35.8779 22.7361L30 18.5279L24.1221 22.7361L26.3673 15.9721L20.4894 11.7639H27.7549L30 5Z" fill="#14532d"/>
+        <path d="M120 5L122.245 11.7639H129.511L123.633 15.9721L125.878 22.7361L120 18.5279L114.122 22.7361L116.367 15.9721L110.489 11.7639H117.755L120 5Z" fill="#14532d"/>
+    </svg>
+</div>
+
+<div class="mt-4 text-center text-green-800 text-sm">
+    <p>© ইসলামিক ফাউন্ডেশন, ঢাকা - ২০২৫</p>
+    <div class="mt-2">
+        <a href="https://www.facebook.com/islamicguic" target="_blank" class="text-blue-600 hover:underline">Facebook Page</a> |
+        <a href="https://www.facebook.com/groups/islamicguic" target="_blank" class="text-blue-600 hover:underline">Facebook Group</a>
+    </div>
+</div>
+
+<script>
+    // Add this code right before the closing </body> tag
+
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.md\\:hidden button');
+    const mobileMenu = document.querySelector('.hidden.md\\:hidden');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        // Toggle the 'hidden' class on the mobile menu
+        mobileMenu.classList.toggle('hidden');
+        
+        // Change the hamburger icon to X when menu is open
+        const menuIcon = mobileMenuButton.querySelector('svg');
+        if (menuIcon) {
+          if (mobileMenu.classList.contains('hidden')) {
+            // Menu is closed, show hamburger icon
+            menuIcon.innerHTML = `
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            `;
+          } else {
+            // Menu is open, show X icon
+            menuIcon.innerHTML = `
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            `;
+          }
+        }
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            
+            // Reset to hamburger icon
+            const menuIcon = mobileMenuButton.querySelector('svg');
+            if (menuIcon) {
+              menuIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              `;
+            }
+          }
+        }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
