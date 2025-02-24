@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GUIC - Green University Islamic Community</title>
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.4/collection/components/icon/svg/mosque.svg">
+  <meta property="og:title" content="GUIC - Green University Islamic Community" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            islamic: {
+              primary: '#005C46',    // Deep Green
+              secondary: '#0D3D56',  // Deep Blue
+              accent: '#C19434',     // Golden
+              light: '#F8F0E3',      // Light Sand
+              dark: '#1A3B32',       // Dark Green
+            },
+          },
+          fontFamily: {
+            amiri: ['Amiri', 'serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  
+  <style>
+    /* Custom styles that go beyond Tailwind */
+    .arabesque-pattern {
+      background-color: #005C46;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C19434' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .gradient-text {
+      background: linear-gradient(to right, #C19434, #005C46);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .newsletter-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 32px rgba(0, 92, 70, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      border: 1px solid rgba(193, 148, 52, 0.3);
+    }
+    
+    .prayer-times {
+      background-color: rgba(13, 61, 86, 0.9);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+    }
+  </style>
+</head>
+
+<body class="font-poppins bg-islamic-light text-gray-800">
+  <!-- Header/Navbar -->
+  <header class="sticky top-0 z-50 bg-islamic-primary text-white shadow-md">
+    <nav class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-mosque text-2xl text-islamic-accent"></i>
+          <a href="#" class="text-2xl font-bold font-amiri">GUIC</a>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#" class="hover:text-islamic-accent transition">Home</a>
+          <a href="#" class="hover:text-islamic-accent transition">Blog</a>
+          <a href="#" class="hover:text-islamic-accent transition">Events</a>
+          <a href="#" class="hover:text-islamic-accent transition">Resources</a>
+          <a href="#" class="hover:text-islamic-accent transition">About</a>
+          <a href="#" class="hover:text-islamic-accent transition">Contact</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+        <div class="flex flex-col space-y-3">
+          <a href="#" class="hover:text-islamic-accent transition">Home</a>
+          <a href="#" class="hover:text-islamic-accent transition">Blog</a>
+          <a href="#" class="hover:text-islamic-accent transition">Events</a>
+          <a href="#" class="hover:text-islamic-accent transition">Resources</a>
+          <a href="#" class="hover:text-islamic-accent transition">About</a>
+          <a href="#" class="hover:text-islamic-accent transition">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative arabesque-pattern text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-islamic-dark to-islamic-primary opacity-80"></div>
+    <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+      <div class="max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="text-4xl md:text-6xl font-bold font-amiri mb-4">
+          Green University Islamic Community
+        </h1>
+        <h2 class="text-xl md:text-2xl font-light mb-8 text-islamic-accent font-amiri">
+          – Nurturing faith, knowledge and brotherhood
+        </h2>
+        <p class="text-lg mb-8 leading-relaxed">
+          <span class="block mb-2">Assalamu alaikum wa rahmatullah,</span>
+          <span class="block mb-2 text-2xl font-amiri">لا إله إلا الله محمد رسول الله</span>
+          <span class="italic">Spreading the message of peace and unity</span>
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <a href="#events" class="px-6 py-3 bg-islamic-accent text-islamic-dark font-semibold rounded-md hover:bg-opacity-90 transition shadow-lg transform hover:-translate-y-1">
+            Upcoming Events
+          </a>
+          <a href="#blog" class="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-md hover:bg-white hover:text-islamic-primary transition shadow-lg transform hover:-translate-y-1">
+            Explore Blog
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Prayer Times Widget -->
+    <div class="prayer-times absolute top-4 right-4 p-3 rounded-lg text-white text-sm hidden md:block">
+      <h3 class="font-bold text-islamic-accent mb-2">Prayer Times</h3>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-1">
+        <span>Fajr:</span><span>5:12 AM</span>
+        <span>Dhuhr:</span><span>12:30 PM</span>
+        <span>Asr:</span><span>4:15 PM</span>
+        <span>Maghrib:</span><span>6:12 PM</span>
+        <span>Isha:</span><span>7:45 PM</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Our Community Features</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-islamic-light p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 bg-islamic-primary rounded-full flex items-center justify-center mb-4 mx-auto">
+            <i class="fas fa-book-open text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-3 text-islamic-primary">Islamic Studies</h3>
+          <p class="text-gray-600 text-center">Regular classes on Quran, Hadith, and Islamic jurisprudence to deepen understanding of the faith.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-islamic-light p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 bg-islamic-primary rounded-full flex items-center justify-center mb-4 mx-auto">
+            <i class="fas fa-hands-helping text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-3 text-islamic-primary">Community Service</h3>
+          <p class="text-gray-600 text-center">Organizing charity events, community support, and social welfare activities for those in need.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-islamic-light p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-islamic-primary rounded-full flex items-center justify-center mb-4 mx-auto">
+            <i class="fas fa-users text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-3 text-islamic-primary">Brotherhood & Sisterhood</h3>
+          <p class="text-gray-600 text-center">Fostering meaningful connections and support networks among students and faculty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Events Section -->
+  <section id="events" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Upcoming Events</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Event 1 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up">
+          <img src="https://via.placeholder.com/600x400" alt="GUB Islamic Olympiad" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-3">
+              <span class="bg-islamic-primary text-white text-xs px-2 py-1 rounded">March 24</span>
+              <span class="text-islamic-accent text-sm"><i class="fas fa-clock mr-1"></i> 11:59 PM</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-islamic-secondary">GUB ISLAMIC OYLMPIAD 2.0</h3>
+            <p class="text-gray-600 mb-4">Featuring GAACSE - Last day to register! Don't miss this opportunity to showcase your Islamic knowledge.</p>
+            <div class="text-right">
+              <a href="https://forms.gle/U6woBfBnM4Aeh2cw5" target="_blank" class="inline-block px-4 py-2 bg-islamic-accent text-white rounded hover:bg-islamic-primary transition">Register Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Event 2 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://via.placeholder.com/600x400" alt="Iftar Event" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-3">
+              <span class="bg-islamic-primary text-white text-xs px-2 py-1 rounded">Friday, March</span>
+              <span class="text-islamic-accent text-sm"><i class="fas fa-clock mr-1"></i> 5:30 PM</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-islamic-secondary">Iftar Event Hosted by 213 Batch</h3>
+            <p class="text-gray-600 mb-4">Join us for a blessed iftar gathering. Registration deadline: March 20th. Limited spots available!</p>
+            <div class="text-right">
+              <a href="https://forms.gle/fSdekbwX3Dq1dDGT7" target="_blank" class="inline-block px-4 py-2 bg-islamic-accent text-white rounded hover:bg-islamic-primary transition">Register Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Event 3 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://via.placeholder.com/600x400" alt="GBS Iftar Mahfil" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-3">
+              <span class="bg-islamic-primary text-white text-xs px-2 py-1 rounded">Ramadan 2024</span>
+              <span class="text-islamic-accent text-sm"><i class="fas fa-map-marker-alt mr-1"></i> Annex E Building</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-islamic-secondary">GBS Iftar Mahfil 2024</h3>
+            <p class="text-gray-600 mb-4">Subscription Fees: BBA & MBA Students: 150 taka, Alumni: 200 taka. Join us for a spiritual evening.</p>
+            <div class="text-right">
+              <a href="https://forms.gle/HHcijcsTXbjr2iND6" target="_blank" class="inline-block px-4 py-2 bg-islamic-accent text-white rounded hover:bg-islamic-primary transition">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#" class="inline-block px-6 py-3 border-2 border-islamic-primary text-islamic-primary font-semibold rounded-md hover:bg-islamic-primary hover:text-white transition">View All Events</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Blog Section -->
+  <section id="blog" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Latest From Our Blog</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Blog Post 1 -->
+        <div class="bg-islamic-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up">
+          <img src="https://via.placeholder.com/600x400" alt="Prayer Times" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-islamic-secondary">যোহর নামাজের সময়সূচী</h3>
+            <p class="text-gray-600 mb-4">পবিত্র রমজানের জন্য যোহরের নামাযের দুটি জামাত অনুষ্ঠিত হবে। প্রথম জামাত: দুপুর ১২:৩৫ মিনিট, দ্বিতীয় জামাত: দুপুর ১২:৫০ মিনিট</p>
+            <div class="text-right">
+              <a href="#" class="text-islamic-primary hover:text-islamic-accent transition font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Blog Post 2 -->
+        <div class="bg-islamic-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://via.placeholder.com/600x400" alt="Iftar Mahfil" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-islamic-secondary">☪️ IFTAR MAHFIL 2024 with 221 Batch</h3>
+            <p class="text-gray-600 mb-4">Assalamu Alaikum & Ramadan Mubarak. Event Details: Date: 22nd March, 2024. Registration Fee: Only 155 taka (including charges)</p>
+            <div class="text-right">
+              <a href="#" class="text-islamic-primary hover:text-islamic-accent transition font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Blog Post 3 -->
+        <div class="bg-islamic-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://via.placeholder.com/600x400" alt="Muslim Community" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-islamic-secondary">বাঙ্গালী মুসলিম সমাজ</h3>
+            <p class="text-gray-600 mb-4">বাঙ্গালী মুসলিম সমাজের একটা সময় কেটেছে বাংলা ইংরেজি হারাম ফতোয়া নিয়ে, পরবর্তী সময় পীরের হাতে ইসলাম সঁপে দিয়ে...</p>
+            <div class="text-right">
+              <a href="#" class="text-islamic-primary hover:text-islamic-accent transition font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#" class="inline-block px-6 py-3 border-2 border-islamic-primary text-islamic-primary font-semibold rounded-md hover:bg-islamic-primary hover:text-white transition">View All Posts</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-islamic-secondary text-white">
+    <div class="container mx-auto px-4">
+      <div class="newsletter-box max-w-3xl mx-auto p-8" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-islamic-primary">Subscribe to Our Newsletter</h2>
+        <p class="text-gray-600 text-center mb-6">Stay updated with the latest events, articles, and community announcements.</p>
+        
+        <form id="newsletter-form" class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+              <input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-islamic-primary">
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+              <input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-islamic-primary">
+            </div>
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-islamic-primary">
+          </div>
+          
+          <div class="flex items-start">
+            <input type="checkbox" id="consent" class="mt-1 mr-2">
+            <label for="consent" class="text-sm text-gray-600">I agree to receive emails from GUIC regarding news, events, and updates. You can unsubscribe at any time.</label>
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" class="px-6 py-3 bg-islamic-primary text-white font-semibold rounded-md hover:bg-islamic-dark transition">Subscribe Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Contact Info -->
+          <div data-aos="fade-right">
+            <h3 class="text-xl font-bold mb-6 text-islamic-primary">Contact Information</h3>
+            
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-islamic-secondary">Location</h4>
+                  <p class="text-gray-600">Green University of Bangladesh, 220/D, Begum Rokeya Sarani, Dhaka-1207</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                  <i class="fas fa-envelope text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-islamic-secondary">Email</h4>
+                  <p class="text-gray-600">guic.community@gmail.com</p>
+                  <p class="text-gray-600">guic.events@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                  <i class="fas fa-phone text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-islamic-secondary">Phone</h4>
+                  <p class="text-gray-600">+880 1712-345678</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                  <i class="fas fa-clock text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-islamic-secondary">Office Hours</h4>
+                  <p class="text-gray-600">Sunday - Thursday: 10:00 AM - 4:00 PM</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="font-semibold text-islamic-secondary mb-3">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="https://www.facebook.com/islamicguic" target="_blank" class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center text-white hover:bg-islamic-accent transition">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center text-white hover:bg-islamic-accent transition">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center text-white hover:bg-islamic-accent transition">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-islamic-primary rounded-full flex items-center justify-center text-white hover:bg-islamic-accent transition">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Form -->
+          <div data-aos="fade-left">
+            <h3 class="text-xl font-bold mb-6 text-islamic-primary">Send Us a Message</h3>
+            
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-islamic-primary">
+              </div>
+              
+              <div>
+                <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-islamic-primary">
+              </div>
+              
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-islamic-primary">
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-islamic-primary"></textarea>
+              </div>
+              
+              <div class="text-right">
+                <button type="submit" class="px-6 py-3 bg-islamic-primary text-white font-semibold rounded-md hover:bg-islamic-dark transition">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-islamic-dark text-white pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <!-- Column 1 -->
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <i class="fas fa-mosque text-2xl text-islamic-accent"></i>
+            <h3 class="text-2xl font-bold font-amiri">GUIC</h3>
+          </div>
+          <p class="text-gray-300 mb-6">
+            Green University Islamic Community is dedicated to fostering a supportive environment for Muslims at our university and promoting understanding of Islam.
+          </p>
+          <!-- Continued from footer section -->
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/islamicguic" target="_blank" class="w-8 h-8 bg-islamic-accent rounded-full flex items-center justify-center text-islamic-dark hover:bg-white transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-islamic-accent rounded-full flex items-center justify-center text-islamic-dark hover:bg-white transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-islamic-accent rounded-full flex items-center justify-center text-islamic-dark hover:bg-white transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Column 2 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-islamic-accent transition">Home</a></li>
+            <li><a href="#events" class="text-gray-300 hover:text-islamic-accent transition">Events</a></li>
+            <li><a href="#blog" class="text-gray-300 hover:text-islamic-accent transition">Blog</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-islamic-accent transition">Contact</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-islamic-accent transition">About Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 3 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Resources</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-islamic-accent transition">Prayer Times</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-islamic-accent transition">Quran Studies</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-islamic-accent transition">Islamic Calendar</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-islamic-accent transition">Community Guidelines</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-islamic-accent transition">Donation</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 4 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Prayer Times Today</h3>
+          <ul class="space-y-2">
+            <li class="flex justify-between">
+              <span>Fajr</span>
+              <span class="text-islamic-accent">5:12 AM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Dhuhr</span>
+              <span class="text-islamic-accent">12:30 PM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Asr</span>
+              <span class="text-islamic-accent">4:15 PM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Maghrib</span>
+              <span class="text-islamic-accent">6:12 PM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Isha</span>
+              <span class="text-islamic-accent">7:45 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 pt-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            &copy; 2024 Green University Islamic Community. All rights reserved.
+          </p>
+          <div>
+            <a href="#" class="text-gray-400 hover:text-islamic-accent transition text-sm mx-3">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-islamic-accent transition text-sm mx-3">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 bg-islamic-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <!-- AOS Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <!-- Moment.js for date handling -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  
+  <!-- Main Script -->
+  <script>
+    // Initialize AOS animation library
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+    
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      // Change icon between bars and times
+      const icon = mobileMenuButton.querySelector('i');
+      if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Form Submissions with validation
+    const newsletterForm = document.getElementById('newsletter-form');
+    const contactForm = document.getElementById('contact-form');
+    
+    // Newsletter Form Submit
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const consent = document.getElementById('consent').checked;
+        
+        // Basic validation
+        if (!firstName || !lastName || !email) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        
+        if (!validateEmail(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+        
+        if (!consent) {
+          alert('Please consent to receive emails from GUIC.');
+          return;
+        }
+        
+        // If everything is valid, you would normally send this to a server
+        // For demo purposes, we'll just show a success message
+        alert('Thank you for subscribing to our newsletter!');
+        newsletterForm.reset();
+      });
+    }
+    
+    // Contact Form Submit
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('contact-email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        
+        if (!validateEmail(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+        
+        // If everything is valid, you would normally send this to a server
+        // For demo purposes, we'll just show a success message
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+      });
+    }
+    
+    // Email validation helper function
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        
+        // Skip if it's just "#"
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Account for fixed header
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      });
+    });
+    
+    // Update prayer times based on location and date
+    function updatePrayerTimes() {
+      // In a real implementation, you would fetch this from an API
+      // For demonstration, we'll just update the time display
+      
+      const now = moment();
+      
+      // Format the date for Islamic calendar
+      const islamicDate = now.format('DD MMMM YYYY');
+      
+      // You could use an Islamic calendar library here
+      // For demo purposes, we're just showing the current date
+      
+      // Update any dynamic date/time elements
+      document.querySelectorAll('.current-date').forEach(el => {
+        el.textContent = now.format('DD MMMM YYYY');
+      });
+      
+      // In a real implementation, you would update the prayer times based on calculations
+      // or an API call to a prayer times service
+    }
+    
+    // Initialize dynamic content
+    document.addEventListener('DOMContentLoaded', function() {
+      updatePrayerTimes();
+      
+      // Periodically update times (every minute)
+      setInterval(updatePrayerTimes, 60000);
+    });
+  </script>
+</body>
+</html>
